@@ -1,0 +1,20 @@
+@import 'common';
+
+.navButton {
+    width: 100px;
+    height: 60px;
+    font-size: 18pt;
+    text-decoration: none;
+    color: $secondary;
+    background-color: $primary;
+    display: inline-block;
+    margin: 10px 25px;
+    text-align: center;
+    line-height: 60px;
+    vertical-align: middle;
+
+    &.vertical {
+        margin: 25px 10px;
+    }
+
+}

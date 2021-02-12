@@ -1,0 +1,21 @@
+@import 'common';
+
+.header {
+    padding: 0px;
+    display: block;
+    height: 80px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $primary;
+    text-align: right;
+}
+
+.brand {
+    height: 70px;
+    width: auto;
+    margin: 5px;
+    vertical-align: middle;
+    float: left;
+}

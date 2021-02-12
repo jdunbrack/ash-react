@@ -1,0 +1,26 @@
+.modal {
+    border: 1px solid black;
+    position: absolute;
+
+    // z-index will not be used, and if so will be <=10 most times. This will display on top.
+    z-index: 100;
+    
+    // &::backdrop.open {
+    //     background-color: rbga(0,0,0,0.7)
+    // }
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &.small {
+        width: 33%;
+    }
+
+    &.medium {
+        width: 66%;
+    }
+
+    &.large {
+        width: 90%;
+    }
+}
