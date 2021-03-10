@@ -1,26 +1,41 @@
-.modal {
-    border: 1px solid black;
-    position: absolute;
+@import '../common';
 
-    // z-index will not be used, and if so will be <=10 most times. This will display on top.
-    z-index: 100;
-    
-    // &::backdrop.open {
-    //     background-color: rbga(0,0,0,0.7)
-    // }
+.modal {
+    border: 1px solid $gray-strong;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 5px 15px 15px;
+    border-radius: 10px;
+    transition: all 0.3s ease-out;
+    
+    // z-index will not be used, and if so will be <=10 most times. This will display on top.
+    z-index: 100;
+}
 
-    &.small {
-        width: 33%;
-    }
+.backdrop {
+    background-color: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+    z-index: 99;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(2px);
+}
 
-    &.medium {
-        width: 66%;
-    }
+.closeIcon {
+    color: $gray-subtle;
+    margin-left: 95%;
+    margin-top: 5px;
 
-    &.large {
-        width: 90%;
+    &:hover {
+        color: $secondary;
     }
+}
+
+.iconContainer {
+    text-align: right;
 }

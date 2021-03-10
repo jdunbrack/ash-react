@@ -1,0 +1,39 @@
+@import '../common/common';
+
+.form {
+    margin: 25px;
+    color: $primary;
+    transition: all 0.3s ease-in-out;
+    height: 220px;
+    width: 250px;
+    overflow: hidden;
+
+    input {
+        display: block;
+        margin: 10px 10px;
+        height: 25px;
+        width: 215px;
+        padding: 5px;
+    }
+
+    .buttonInput {
+        display: inline-block;
+        height: 40px;
+        width: 110px;
+        font-size: 12pt;
+        background-color: $primary;
+        color: $secondary;
+    }
+
+    &.register {
+        height: 560px;
+        overflow: auto;
+    }
+}
+
+.passwordWarn {
+    font-size: 9pt;
+    color: crimson;
+    width: 250px;
+    margin-left: 20px;
+}

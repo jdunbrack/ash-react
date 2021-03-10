@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './HeaderBar.module.scss';
 import Brand from '../img/asortedhome.svg';
 
-function HeaderBar ({branding, children}: HeaderProps) {
+const HeaderBar = ({branding, children}: HeaderProps) => {
     return (
         <div
             className={styles.header}

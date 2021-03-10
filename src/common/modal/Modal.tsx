@@ -1,44 +1,40 @@
 import React from 'react';
 import styles from './Modal.module.scss';
 import classnames from "classnames";
+import Backdrop from './Backdrop';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
-export default class Modal extends React.Component<ModalProps, ModalState> {
-    constructor(props) {
-        super(props);
-        this.state = {
-            visible: this.props.visible || false,
-            size: this.props.size || "small",
-        }
+const Modal = (props: ModalProps) => {
+
+    if (!props.visible) {
+        return null;
     }
 
-    toggleModal() {
-        this.setState({visible: !this.state.visible});
-    }
-
-    render() {
-        return (
-            <div
-                className={classnames(
-                    this.styles.modal,
-                    this.state.size
-                )}
-            >
-                <i
-                    className={"far fa-times-circle"}
-                    style={{float: "right"}}
-                    onClick={this.toggleModal}
+    return (
+        <>
+        <Backdrop
+            show={props.visible}
+            clickHandler={props.toggleModal} // can click x or modal backdrop to close
+        />
+        <div className={styles.modal} >
+            <div className={styles.iconContainer}>
+                <FontAwesomeIcon // use free FontAwesome icons - fontawesome.com
+                    icon={faTimes}
+                    className={styles.closeIcon}
+                    onClick={props.toggleModal}
                 />
-                {this.props.children}
-            </div>            
-        )
-    }
-}
-
-type ModalState = {
-    visible?: boolean,
-    size: "small" | "medium" | "large";
+            </div>
+            {props.children}
+        </div>
+        </>
+    )
 }
 
 type ModalProps = {
-    ...ModalState
+    visible: boolean,
+    toggleModal: () => void;
+    children?: React.ReactNode,
 }
+
+export default Modal;

@@ -1,10 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Alegreya:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap');
 
-$primary: purple;
-$secondary: lightblue;
-$default-fonts: 'Alegreya Sans', 'Montserrat', 'Arial', sans-serif;
-$header-fonts: 'Aclonica', 'Georgia', 'Arial', sans-serif;
 
+// Colors
+$primary: indigo;
+$secondary: skyblue;
+$gray-strong: #555;
+$gray-subtle: #AAA;
+
+// Font Families
+$default-fonts: 'Alegreya Sans', 'Arial', sans-serif;
+$header-fonts: 'Aclonica', 'Georgia', 'Arial', sans-serif;
+$subheader-fonts: 'Montserrat', $default-fonts;
+
+// Basic CSS override
 * {
     margin: 0px;
     padding: 0px;

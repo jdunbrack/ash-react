@@ -1,0 +1,40 @@
+@import '../common';
+
+.splash {
+    height: 400px;
+    background-color: white;
+    margin-top: 200px;
+
+    .title {
+        font-family: 'Aclonica';
+        font-size: 48pt;
+        color: $secondary;
+    }
+
+    .subtitle {
+        font-family: 'Alegreya Sans', 'Arial';
+        font-size: 24pt;
+        color: $primary;
+    }
+}
+
+.headerContainer {
+    width: 60%;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.splashImage {
+    width: 30%;
+    margin: 0px;
+    height: auto;
+    vertical-align: middle;
+    border: 1px solid $primary;
+    border-radius: 10px;
+    box-shadow:
+        2px 2px 5px $primary,
+        -2px -2px 5px $primary,
+        -2px 2px 5px $primary,
+        2px -2px 5px $primary;
+}
