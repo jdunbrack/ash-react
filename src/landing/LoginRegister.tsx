@@ -14,7 +14,7 @@ export default class LoginRegister extends React.Component<LoginRegisterProps, L
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleRegister = this.handleRegister.bind(this);
+        this.toggleRegister = this.toggleRegister.bind(this);
         this.passwordVerify = this.passwordVerify.bind(this);
     }
 
@@ -26,12 +26,12 @@ export default class LoginRegister extends React.Component<LoginRegisterProps, L
     handleSubmit (e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
         const passwordInput = document.getElementById('password') as HTMLInputElement;
-        if (this.state.email == "testing@asortedhome.com" && passwordInput && passwordInput.value == "Testing123") {
+        if (this.state.email == "test@asortedhome.com" && passwordInput && passwordInput.value == "Testing123") {
             window.location.assign('/dash')
         }
     }
 
-    handleRegister (e: React.MouseEvent<HTMLElement>) {
+    toggleRegister (e: React.MouseEvent<HTMLElement>) {
         e.preventDefault()
         this.setState({ registration: !this.state.registration });
     }
@@ -129,7 +129,7 @@ export default class LoginRegister extends React.Component<LoginRegisterProps, L
                 />
                 <button
                     className={styles.buttonInput}
-                    onClick={this.handleRegister}
+                    onClick={this.toggleRegister}
                 >
                     { this.state.registration ? "Back to Login" : "Registration" }
                 </button>

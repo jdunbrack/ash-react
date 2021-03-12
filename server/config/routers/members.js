@@ -10,6 +10,8 @@ router.post('/add', async (req, res, next) => {
 router.get('/get', async (req, res, next) => {
     console.log("GET /get");
     Members.getAll(req, res);
-})
+});
+
+
 
 module.exports = router;

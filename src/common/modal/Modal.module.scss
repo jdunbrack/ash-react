@@ -9,7 +9,7 @@
     background-color: white;
     padding: 5px 15px 15px;
     border-radius: 10px;
-    transition: all 0.3s ease-out;
+    transition: all 0.3s ease-in-out;
     
     // z-index will not be used, and if so will be <=10 most times. This will display on top.
     z-index: 100;
