@@ -5,7 +5,7 @@ module.exports = {
         try {
             newMember = new Member(req.body)
         } catch (err) {
-            res.status(500).send("Request body must have all fields filled.")
+            res.status(500).send("Request body must contain all properties.")
         }
 
         Member.create(newMember, (err, data) => {
@@ -20,6 +20,48 @@ module.exports = {
         Member.findAll((err, data) => {
             if (err) {
                 res.status(500).send({ message: err.message || "SQL error on findAll"});
+            } else {
+                res.json(data);
+            }
+        })
+    },
+    update: (req, res) => {
+        try {
+            updatedMember = new Member(req.body);
+        } catch (err) {
+            res.status(500).send("Request body must contain all properties.")
+        }
+
+        Member.update(updatedMember, (err, data) => {
+            if (err) {
+                res.status(500).send({ message: err.message || "SQL error on update" })
+            } else {
+                res.json(data);
+            }
+        })
+    },
+    findOne: (req, res) => {
+        Member.findById(req.params.id, (err, data) => {
+            if (err) {
+                res.status(500).send({ message: err.message || "SQL error on lookup by id"})
+            } else {
+                res.json(data);
+            }
+        })
+    },
+    delete: (req, res) => {
+        Member.delete(req.params.id, (err, data) => {
+            if (err) {
+                res.status(500).send({ message: err.message || "SQL error on delete"})
+            } else {
+                res.json(data);
+            }
+        })
+    },
+    findInGroup: (req, res) => {
+        Member.findByGroupId(req.params.groupId, (err, data) => {
+            if (err) {
+                res.status(500).send({ message: err.message || "SQL error on lookup by group"})
             } else {
                 res.json(data);
             }

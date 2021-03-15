@@ -1,5 +1,5 @@
-const e = require('express');
 const sql = require('../db');
+const errorHandler = require('./helper');
 
 const Member = function (member) {
     this.id = member.id || null;
@@ -8,15 +8,6 @@ const Member = function (member) {
     this.email = member.email;
     this.password = member.password;
     this.groupId = member.groupId;
-}
-
-const errorHandler = (err, callback) => {
-    if (err) {
-        console.log("Error! ", err);
-        callback(err, null);
-        return true;
-    }
-    return false;
 }
 
 Member.create = (newMember, callback) => {
@@ -92,7 +83,7 @@ Member.delete = (id, callback) => {
 
 Member.findByGroupId = (groupId, callback) => {
     sql.query(
-        `SELECT * FROM members WHERE group_id=?`, group_id,
+        `SELECT * FROM members WHERE group_id=?`, groupId,
         (err, data) => {
             if (errorHandler(err, callback)) return;
 
