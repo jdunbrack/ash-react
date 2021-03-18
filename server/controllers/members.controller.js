@@ -1,4 +1,4 @@
-const Member = require('../models/member.model');
+const Member = require('../models/Member');
 
 module.exports = {
     create: (req, res) => {
@@ -19,7 +19,7 @@ module.exports = {
     getAll: (req, res) => {
         Member.findAll((err, data) => {
             if (err) {
-                res.status(500).send({ message: err.message || "SQL error on findAll"});
+                res.status(500).send({ message: err.message || "SQL error on find all"});
             } else {
                 res.json(data);
             }
