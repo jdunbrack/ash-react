@@ -1,4 +1,3 @@
-const { faToiletPaperSlash } = require('@fortawesome/free-solid-svg-icons');
 const sql = require('../db')
 const errorHandler = require('./helper')
 

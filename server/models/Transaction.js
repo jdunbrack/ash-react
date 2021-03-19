@@ -106,4 +106,20 @@ Transaction.findByContributorToPurchaser = (contributorId, purchaserId, callback
     )
 }
 
+Transaction.deleteByContributorToPurchaser = (contributorId, purchaserId, callback) => {
+    sql.query(
+        `DELETE FROM transactions WHERE contributor_id=? AND purchaser_id=?`,
+        [
+            contributorId,
+            purchaserId
+        ],
+        (err, data) => {
+            if (errorHandler(err, callback)) return;
+
+            console.log(`Deleted transactions that ${contributor_id} owed to ${purchaserId}`);
+            callback(null, data);
+        }
+    )
+}
+
 module.exports = Transaction;
