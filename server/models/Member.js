@@ -7,17 +7,19 @@ const Member = function (member) {
     this.lastName = member.lastName;
     this.email = member.email;
     this.password = member.password;
+    this.avatar = member.avatar,
     this.groupId = member.groupId;
 }
 
 Member.create = (newMember, callback) => {
     sql.query(
-        `INSERT INTO members (first_name, last_name, email, password, group_id) VALUES (?,?,?,?,?)`,
+        `INSERT INTO members (first_name, last_name, email, password, avatar, group_id) VALUES (?,?,?,?,?,?)`,
         [
             newMember.firstName,
             newMember.lastName,
             newMember.email,
             newMember.password,
+            newMember.avatar,
             newMember.groupId
         ],
         (err, data) => {
@@ -52,12 +54,13 @@ Member.findById = (id, callback) => {
 
 Member.update = (updatedMember, callback) => {
     sql.query(
-        `UPDATE members SET first_name=?, last_name=?, email=?, password=?, groupId=? WHERE id=?`,
+        `UPDATE members SET first_name=?, last_name=?, email=?, password=?, avatar=?, groupId=? WHERE id=?`,
         [
             updatedMember.firstName,
             updatedMember.lastName,
             updatedMember.email,
             updatedMember.password,
+            updatedMember.avatar,
             updatedMember.groupId,
             updatedMember.id
         ],
