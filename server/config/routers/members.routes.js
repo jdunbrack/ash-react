@@ -12,12 +12,12 @@ router.put('/', (req, res) => {
     Members.update(req, res);
 })
 
-router.get('/get/group/:groupId', (req, res) => {
+router.get('/get/group/:groupId(\d+)', (req, res) => {
     console.log('GET /members/get/group/' + req.params.groupId);
     Members.findInGroup(req, res);
 })
 
-router.get('/get/:id', (req, res) => {
+router.get('/get/:id(\d+)', (req, res) => {
     console.log('GET /members/get/' + req.params.id);
     Members.findOne(req, res);
 })
@@ -27,7 +27,7 @@ router.get('/get', (req, res) => {
     Members.getAll(req, res);
 });
 
-router.delete('/delete/:id', (req, res) => {
+router.delete('/delete/:id(\d+)', (req, res) => {
     console.log('DELETE /members/' + req.params.id);
     Members.delete(req, res);
 })

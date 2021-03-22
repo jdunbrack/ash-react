@@ -17,7 +17,7 @@ router.get('/group/:groupId(\d+)', (req, res) => {
     tasks.findByGroup(req, res);
 })
 
-router.get('/worker/:workerId', (req, res) => {
+router.get('/worker/:workerId(\d+)', (req, res) => {
     console.log('GET /tasks/worker/' + req.params.workerId);
     tasks.findByWorker(req, res);
 })

@@ -1,0 +1,23 @@
+@import "../common/common";
+
+.profileCard {
+    width: 80px;
+    height: 200px;
+    border-radius: 20px;
+    background-color: $secondary;
+    text-align: center;
+    padding: 15px;
+
+    .name {
+        font-family: $header-fonts;
+        font-size: 18pt;
+        font-weight: bold;
+        color: $primary;
+    }
+}
+
+.profileImg {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}

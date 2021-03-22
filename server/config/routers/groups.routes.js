@@ -23,7 +23,7 @@ router.get('/members/:memberId(\d+)', (req, res) => {
 })
 
 router.get('/:id(\d+)/members', (req, res) => {
-    console.log(`GET /${req.params.id}/members`);
+    console.log(`GET /groups/${req.params.id}/members`);
     Groups.findMembers(req, res);
 })
 
@@ -33,7 +33,7 @@ router.get('/:id(\d+)', (req, res) => {
 })
 
 router.delete('/:id(\d+)', (req, res) => {
-    console.log('DELETE /' + req.params.id)
+    console.log('DELETE /groups/' + req.params.id)
     Groups.delete(req, res);
 })
 
