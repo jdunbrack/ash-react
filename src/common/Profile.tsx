@@ -1,5 +1,7 @@
 import React from 'react';
 import styles from './Profile.module.scss';
+import { MemberType } from '../mockData';
+import defaultAvatar from '../img/default.png'
 
 function Profile (props: ProfileProps) {
 
@@ -7,7 +9,7 @@ function Profile (props: ProfileProps) {
         <div className={styles.profileCard}>
             <div>
                 <img
-                    src={props.member.profile} 
+                    src={props.member.avatar || defaultAvatar} 
                     className={styles.profileImg}
                 />
             </div>
@@ -22,7 +24,7 @@ function Profile (props: ProfileProps) {
 }
 
 type ProfileProps = {
-    member: Object,
+    member: MemberType,
 }
 
 export default Profile;

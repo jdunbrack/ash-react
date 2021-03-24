@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Landing from './landing/Landing';
+//import Landing from './landing/Landing';
+import Dashboard from './apps/dash/Dashboard';
 
 ReactDOM.render(
-    <Landing />,
+    <Dashboard />,
   document.getElementById('root')
 );
 

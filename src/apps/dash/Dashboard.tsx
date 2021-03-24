@@ -1,32 +1,37 @@
 import React from 'react';
+import { mockMembers, MemberType } from '../../mockData';
+import Profile from '../../common/Profile';
 
 export default class Dashboard extends React.Component<DashboardProps, DashboardState> {
     constructor(props: DashboardProps) {
         super(props);
         this.state = {
-            user: {
-                email: "testing@asortedhome.com",
-                firstName: "Jordan",
-                lastName: "Dunbrack",
-                groupId: "00000"
+            member: {
+                ...mockMembers[0]
             },
-            userId: "0"
+            memberId: mockMembers[0].id
         }
     }
 
     render() {
         return (
-            <div>Dashboard</div>
+            <>
+            {
+                mockMembers.forEach((member) => {
+                    <Profile member={member} />
+                })
+            }
+            </>
         );
     }
 
 }
 
 type DashboardProps = {
-    userId: string,
+    memberId?: number,
 }
 
 type DashboardState = {
-    userId: string,
-    user: object,
+    memberId: number,
+    member: MemberType,
 }

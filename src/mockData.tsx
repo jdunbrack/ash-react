@@ -39,7 +39,7 @@ const mockGroup = {
 }
 
 // Mock Transactions
-mockTransactions = [
+const mockTransactions = [
     {
         amount: 20,
         vendor: "Target",
@@ -83,7 +83,7 @@ mockTransactions = [
 ]
 
 // Mock Tasks
-mockTasks = [
+const mockTasks = [
     {
         name: "Dishes",
         description: "Empty/fill every other day",
@@ -116,9 +116,19 @@ mockTasks = [
     },
 ]
 
-module.exports = {
+export {
     mockGroup,
     mockMembers,
     mockTransactions,
     mockTasks,
+}
+
+export type MemberType = {
+    id: number,
+    firstName: string,
+    lastName: string,
+    email: string,
+    password: string,
+    avatar: string | null,
+    groupId: number,
 }
